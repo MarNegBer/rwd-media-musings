@@ -318,7 +318,7 @@ footer p {
 
 /* PHONE
 ---------------------------------------*/
-@media {max-width: 480px} {
+@media  {max-width: 480px} {
 	div.wrapper {
 		width: 100%;
 		margin: 0;
