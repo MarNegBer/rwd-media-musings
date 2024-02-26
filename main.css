@@ -76,7 +76,8 @@ font-family: Montserrat, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', s
 ---------------------------------------*/	
 
 nav.topnav { /* ← entire navigation area */
-border: 5rem;
+border-style: solid;
+border-width: thin;
 border-color: #E05D53;
 }
 
@@ -111,14 +112,14 @@ nav.topnav a:hover {
 ---------------------------------------*/	
 main.homepage {
 	display: grid;
-	grid-template-columns: 3fr 1fr 1fr;
+	grid-template-columns: 3fr 1fr;
 	grid-gap: .5rem;
 	border: solid #546155;
 }
 
 article.blog {
 grid-column: 1/2;
-grid-row: 1/2;
+grid-row: 1/3;
 padding-left: 1rem;
 padding-top: 1rem;
 padding-right: 1rem;
@@ -127,7 +128,7 @@ padding-right: 1rem;
 article.blog h2 { /* ← blog heading */
 font-size: 120%;
 size: 150%;
-border-bottom: 5px gainsboro;
+border-bottom: 1px solid gainsboro;
 text-decoration-line: underline;
 }
 
@@ -147,14 +148,14 @@ main.homepage aside { /* ← both asides */
 }
 
 main.homepage aside.recent {
-grid-column: 3/3;
+grid-column: 2/3;
 background-color: rgb(221, 220, 220);
 text-decoration: none;
 padding-left: 1rem;
 }
 
 main.homepage aside.links {
-grid-column: 3/3;
+grid-column: 2/3;
 border: solid;
 background-color: rgb(221, 220, 220);
 text-decoration: none;
@@ -190,7 +191,7 @@ main.homepage aside li a:hover {
 ---------------------------------------*/
 
 section.campus	{
-grid-row: 3/3;
+grid-row: 3/4;
 grid-column: 1/4;
 display: grid;
 grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -204,8 +205,8 @@ section.campus section { /* ← all 6 of the building sections */
 }
 
 section.campus h3 {
-font-size: 110%;
-size: 110%;
+font-size: 100%;
+size: 100%;
 font-family: Montserrat, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
 }
@@ -249,9 +250,121 @@ footer p {
 /* TABLET
 ---------------------------------------*/
 
+@media screen and (max-width: 760px ) { 
+	div.wrapper {
+		width: 95%;
+	}
+	img {
+		max-width: 100%;
+	}
+	header {
+		text-align: center;
+		flex-direction: column;
+	}
+	nav.topnav {
+		margin-top: .5em;
+	}
+	main.homepage {
+		grid-template-columns: 1fr 1fr;
+	}
+	article.blog {
+		grid-column: 1/3;
+		grid-row: 1/2;
+	}
+	main.homepage aside.recent {
+		grid-column: 1/2;
+		grid-row: 2/3;
+	}
+	main.homepage aside.links {
+		grid-column: 2/3;
+		grid-row: 2/3;
+	}
+	section.campus {
+		grid-column: 1/3;
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+	section.campus figure {
+		display: grid;
+		grid-template-columns: 1fr 3fr;
+		grid-gap: .75em;
+		align-items: center;
+	}
+	article.blog h2 {
+		font-size: 170%;
+	}
+	article.blog p {
+		line-height: 1.4;
+		font-size: 130%;
+		margin-bottom: 0;
+	}
+	main.homepage aside h3 {
+		font-size: 170%;
+	}
+	main.homepage aside li {
+		margin-bottom: 1.3em;
+	}
+	main.homepage aside a {
+		padding: .5em;
+	}
+	section.campus h3 {
+		font-size: 115%;
+	}
+	section.campus figcaption {
+		font-size: 90%;
+	}
 
+}
 
 
 /* PHONE
 ---------------------------------------*/
+@media {max-width: 480px} {
+	div.wrapper {
+		width: 100%;
+		margin: 0;
+	}
+	header {
+		margin: 0;
+		padding: 1.2em;
+	}
 
+	nav.topnav {
+		width: 98%;
+		margin-bottom: .5em;
+	}
+	nav.topnav ul {
+		flex-direction: column;
+	}
+	nav.topnav li {
+		border-bottom: 1px solid white;
+	}
+	nav.topnav li:last-of-type {
+		border: none;
+	}
+	main.homepage {
+		grid-template-columns: 1fr;
+	}
+	article.blog {
+		grid-column: 1/2;
+}
+	main.homepage aside {
+		display: none;
+	}
+	section.campus {
+		grid-template-columns: 1fr;
+		grid-gap: 1em;
+	}
+	section.campus h3 {
+		font-size: 180%;
+	}
+	section.campus figure {
+		grid-template-columns: 1fr 4fr;
+		background-color: white;
+		padding-right: 1em;
+		border-radius: 2em;
+	}
+	section.campus figcaption {
+		font-size: 140%;
+		line-height: 1.4;
+	}
+}
